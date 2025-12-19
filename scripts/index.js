@@ -7,6 +7,14 @@ const server = http.createServer(async (request, response) => {
             const htmlContent = await fs.readFile("./index.html");
             response.writeHead(200, { "Content-Type": "text/html" });
             response.end(htmlContent);
+        } else if (request.url === "/about") {
+            const htmlContent = await fs.readFile("./pages/about.html");
+            response.writeHead(200, { "Content-Type": "text/html" });
+            response.end(htmlContent);
+        } else if (request.url === "/contact-me") {
+            const htmlContent = await fs.readFile("./pages/contact-me.html");
+            response.writeHead(200, { "Content-Type": "text/html" });
+            response.end(htmlContent);
         } else {
             // Error Page
             const htmlContent = await fs.readFile("./pages/404.html");
